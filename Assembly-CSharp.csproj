@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{81505E94-0639-574E-E423-1EA13D941AB5}</ProjectGuid>
+    <ProjectGuid>{9B282EBB-F650-CE4C-3165-30EC9E911FE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Block.cs" />
     <Compile Include="Assets\Scripts\End.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemy\BossMove.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy1.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy2.cs" />
@@ -83,31 +84,31 @@
     <Compile Include="Assets\Scripts\Weapon\Weapon2.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon3.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/liujiayi/Desktop/塔防/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.2.10f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

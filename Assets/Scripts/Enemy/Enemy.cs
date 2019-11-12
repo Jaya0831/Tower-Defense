@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int blood;
     public int demageToPlayer;
     public float distance = 0;
+    public int award;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class Enemy : MonoBehaviour
         if (blood <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.money += award;
+            GameManager.Instance.damageCount++;
         }
 
     }

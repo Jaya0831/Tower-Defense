@@ -68,22 +68,23 @@ public class WeaponUI : MonoBehaviour
     public void CreateAfterClick1()
     {
         //Debug.Log("CreateAfterClick1");
-        if(block.GetComponent<Block>().isEmpty==false){
+        if(block.GetComponent<Block>().isEmpty==false||GameManager.Instance.money>=Weapon1.price){
             Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weapon1Prefab);
             //Debug.Log(weapon1Prefab.name);
             block.GetComponent<Block>().isEmpty = true;
-            GameManager.Instance.money -= Weapon1.prise;
+            GameManager.Instance.money -= Weapon1.price;
         }
 
     }
     public void CreateAfterClick2()
     {
         //Debug.Log("CreateAfterClick2");
-        if (block.GetComponent<Block>().isEmpty == false)
+        if (block.GetComponent<Block>().isEmpty == false||GameManager.Instance.money>=Weapon2.price)
         {
             Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weapon2Prefab);
             //Debug.Log(weapon2Prefab.name);
             block.GetComponent<Block>().isEmpty = true;
+            GameManager.Instance.money -= Weapon1.price;
         }
 
     }
@@ -95,6 +96,7 @@ public class WeaponUI : MonoBehaviour
             Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weapon3Prefab);
             //Debug.Log(weapon3Prefab.name);
             block.GetComponent<Block>().isEmpty = true;
+            GameManager.Instance.money -= Weapon1.price;
         }
 
     }

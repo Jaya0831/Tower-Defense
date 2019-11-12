@@ -17,7 +17,7 @@ public class End : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("23333");
+        //Debug.Log("23333");
         if (other.tag == "Enemy")
         {
             //Debug.Log("23333");

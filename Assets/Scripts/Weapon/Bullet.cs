@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         {
             float velocityMagnitude = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
             gameObject.GetComponent<Rigidbody>().velocity = (targetEnemy.transform.position - transform.position).normalized * velocityMagnitude;
-            Debug.Log(targetEnemy.transform.position);
+            //Debug.Log(targetEnemy.transform.position);
 
         }
 

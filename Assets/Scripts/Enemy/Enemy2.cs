@@ -9,6 +9,7 @@ public class Enemy2 : Enemy
     {
         blood = 20;
         demageToPlayer = 2;
+        award = 250;
     }
 
     // Update is called once per frame

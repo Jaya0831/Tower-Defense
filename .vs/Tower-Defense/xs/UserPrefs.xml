@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{9B282EBB-F650-CE4C-3165-30EC9E911FE9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Weapon/Weapon.cs" Line="13" Column="19" />
+      <File FileName="Assets/Scripts/Weapon/Weapon1.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/Weapon/Weapon2.cs" Line="15" Column="25" />
+      <File FileName="Assets/Scripts/Weapon/Weapon3.cs" Line="15" Column="17" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="51" Column="20" />
+      <File FileName="Assets/Scripts/Enemy/Enemy.cs" Line="30" Column="48" />
+      <File FileName="Assets/Scripts/Enemy/Enemy1.cs" Line="12" Column="21" />
+      <File FileName="Assets/Scripts/Enemy/Enemy2.cs" Line="12" Column="21" />
+      <File FileName="Assets/Scripts/Enemy/Boss.cs" Line="18" Column="9" />
+      <File FileName="../../../吃豆人/Assets/Scripts/GameManager.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/VeiwController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Weapon/Bullet1.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/WeaponUI.cs" Line="72" Column="26" />
+      <File FileName="Assets/Scripts/UI/MyButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Weapon/Bullet.cs" Line="22" Column="15" />
+      <File FileName="Assets/Scripts/Enemy/Move.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/BossMove.cs" Line="10" Column="22" />
+      <File FileName="Assets/Scripts/End.cs" Line="20" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Tower-Defense" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemy" expanded="True" />
+                <Node name="UI" expanded="True" />
+                <Node name="Weapon" expanded="True" />
+                <Node name="GameManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d733d879-ea6b-4e26-891f-8f35da97f47f" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

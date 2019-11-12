@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour
     public int timerRuler;
     public float radius;
     private Vector3 view;
-    public static int prise;
+    public static int price;
    
 
     // Start is called before the first frame update

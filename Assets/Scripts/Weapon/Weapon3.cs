@@ -12,7 +12,7 @@ using UnityEngine;
             timer = 50;
             timerRuler = 50;
             radius = 40;
-            prise = 500;
+            price = 500;
     }
 
 
