@@ -11,8 +11,9 @@ using UnityEngine;
             speed = 120;
             timer = 40;
             timerRuler = 40;
-            radius = 40;
+            radius = 1000;
             price = 400;
+            shootFlyEnemy = true;
         }
 
 

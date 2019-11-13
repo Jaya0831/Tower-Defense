@@ -6,38 +6,83 @@ public class Weapon : MonoBehaviour
 {
     public GameObject bulletPrefabs;
     public float speed;
+    private GameObject target;
     public int timer;
     public int timerRuler;
     public float radius;
     private Vector3 view;
     public static int price;
+    public bool isLocked;
+    public bool shootFlyEnemy;
    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isLocked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer++;
-        GameObject target;
-        Collider[] cols=Physics.OverlapSphere(transform.position, radius, 1 << LayerMask.NameToLayer("Enemy"));
         
-        if (cols.Length != 0)
+        if (GameManager.Instance.selectedTarget)
         {
-            //Debug.Log("shoot");
-            target = cols[0].gameObject;
-            foreach (var item in cols)
+            if(GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility&&shootFlyEnemy==true|| GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility==false)
             {
-                if (Vector3.Distance(transform.position, item.transform.position) < Vector3.Distance(transform.position, target.transform.position))
+                if (Vector3.Distance(transform.position, GameManager.Instance.selectedTarget.transform.position) <= radius)
                 {
-                    target = item.gameObject;
-                    
+                    isLocked = true;
+                    target = GameManager.Instance.selectedTarget;
                 }
             }
+            
+        }
+        if (!isLocked)
+        {
+            Collider[] cols = Physics.OverlapSphere(transform.position, radius, 1 << LayerMask.NameToLayer("Enemy"));
+            if (shootFlyEnemy == false)
+            {
+                for(int i=0;i<cols.Length;i++)
+                {
+                    if (cols[i].gameObject.GetComponent<Enemy>().flyAbility)
+                    {
+                        cols[i] = null;
+                    }
+                }
+            }
+            List<Collider> availableCols=new List<Collider>();
+            foreach(var item in cols)
+            {
+                if (item)
+                {
+                    availableCols.Add(item);
+                }
+            }
+            if (availableCols.Count!=0 )
+            {
+                //Debug.Log("shoot");
+                target = availableCols[0].gameObject;
+                foreach (var item in availableCols)
+                {
+                    //Debug.Log(item.GetComponent<Enemy>().distance);
+                    if (target.GetComponent<Enemy>().distance<item.GetComponent<Enemy>().distance)
+                    {
+                        target = item.gameObject;
+                        //Debug.Log(target);
+                    }
+                }
+            }
+        }
+        
+        if (!target || Vector3.Distance(target.transform.position, transform.position) > radius)
+        {
+            isLocked = false;
+            target = null;
+        }
+        else
+        {
             view = target.transform.position - transform.position;
             transform.forward = view;
             if (timer >= timerRuler)

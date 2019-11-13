@@ -12,6 +12,7 @@ public class Weapon1 : Weapon
         timerRuler = 30;
         radius = 30;
         price = 300;
+        shootFlyEnemy = false;
     }
 
     

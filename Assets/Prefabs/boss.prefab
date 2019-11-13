@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8502497409945362928}
   - component: {fileID: 1415756782821641309}
   - component: {fileID: 1260441101460819510}
-  - component: {fileID: 6814346740291446818}
   - component: {fileID: 217766195258073025}
   - component: {fileID: 8031226437249430301}
+  - component: {fileID: 4465976547731578840}
   m_Layer: 8
   m_Name: boss
   m_TagString: Enemy
@@ -101,20 +101,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6814346740291446818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8200482558796333550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f6c2b97b510428a99cf51541510419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  way: {fileID: 3895188953161625279, guid: 0049294df4bc049a38b01fe7a1755394, type: 3}
-  speed: 1
 --- !u!54 &217766195258073025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,3 +129,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42f19944e2b04d819c9502e1e8b79d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: 0
+  demageToPlayer: 0
+  distance: 0
+  award: 0
+--- !u!114 &4465976547731578840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8200482558796333550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b6ede73df314132a61c01e8bf1d5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  way: {fileID: 3895188953161625279, guid: 0049294df4bc049a38b01fe7a1755394, type: 3}
+  speed: 0
+  index: 0
+  realSpeed: {x: 0, y: 0, z: 0}
+  upPosition: {x: 0, y: 0, z: 0}

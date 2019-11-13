@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy2 : Enemy
+public class Fly : Move
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        blood = 20;
-        demageToPlayer = 2;
-        award = 250;
-        flyAbility = true;
+        speed = 0.3f;
+        upPosition = new Vector3(0, 5, 0);
     }
 
     

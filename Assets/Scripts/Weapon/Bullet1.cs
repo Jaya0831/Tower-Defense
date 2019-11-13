@@ -8,6 +8,7 @@ public class Bullet1 : Bullet
     void Start()
     {
         damageToEnemy = 1;
+        
     }
 
     

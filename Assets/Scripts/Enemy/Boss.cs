@@ -10,11 +10,8 @@ public class Boss : Enemy
         blood = 50;
         demageToPlayer = 5;
         award = 1000;
+        flyAbility = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

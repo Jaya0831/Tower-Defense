@@ -13,7 +13,8 @@ using UnityEngine;
             timerRuler = 50;
             radius = 40;
             price = 500;
-    }
+            shootFlyEnemy = true;
+        }
 
 
     }

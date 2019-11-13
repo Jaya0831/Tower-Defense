@@ -10,11 +10,8 @@ public class Enemy1 : Enemy
         blood = 10;
         demageToPlayer = 1;
         award = 100;
+        flyAbility = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

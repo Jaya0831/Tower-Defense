@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public int demageToPlayer;
     public float distance = 0;
     public int award;
+    public bool flyAbility;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +18,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance += Mathf.Pow(Mathf.Pow(GetComponent<Rigidbody>().velocity.x, 2) + Mathf.Pow(GetComponent<Rigidbody>().velocity.y, 2) + Mathf.Pow(GetComponent<Rigidbody>().velocity.z, 2), 1 / 3) * Time.deltaTime;
-
+        //Debug.Log(GetComponent<Rigidbody>().velocity);
+        distance += GetComponent<Move>().realSpeed.magnitude * Time.deltaTime;
+        //Debug.Log(transform.position);
     }
     public void GetHurt(int damage)
     {
         blood -= damage;
-        if (blood <= 0)
+        if (blood <= 0) 
         {
             Destroy(gameObject);
             GameManager.Instance.money += award;

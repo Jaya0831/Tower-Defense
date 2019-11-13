@@ -6,8 +6,10 @@ public class Move : MonoBehaviour
 {
     public GameObject way;
     private List<Vector3> WayPoints=new List<Vector3>();
-    public float speed=1;
-    private int index;
+    public float speed;
+    public int index;
+    public Vector3 realSpeed;
+    public Vector3 upPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +26,8 @@ public class Move : MonoBehaviour
         if (Vector3.Distance(transform.position, WayPoints[index]) > 1.3)
         //if(transform.position!=WayPoints[index])
         {
-            Vector3 temp = Vector3.MoveTowards(transform.position, WayPoints[index], speed);
-            GetComponent<Rigidbody>().MovePosition(temp);
+            realSpeed = Vector3.MoveTowards(transform.position, WayPoints[index], speed);
+            GetComponent<Rigidbody>().MovePosition(realSpeed);
             //Debug.Log(Vector3.Distance(transform.position, WayPoints[index]));
         }
         else
@@ -39,11 +41,12 @@ public class Move : MonoBehaviour
 
         }
     }
-    private void LoadPath(GameObject go)
+    public void LoadPath(GameObject go)
     {
         foreach(Transform t in go.transform)
         {
-            WayPoints.Add(t.position);
+            WayPoints.Add(t.position+upPosition);
+            //Debug.Log(upPosition);
         }
     }
 }
