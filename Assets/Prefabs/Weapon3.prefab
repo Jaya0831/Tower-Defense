@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5468868448487405110}
   - component: {fileID: 4398123370841683154}
   - component: {fileID: 9199714955057812626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,3 +112,6 @@ MonoBehaviour:
   timer: 0
   timerRuler: 0
   radius: 0
+  price: 0
+  isLocked: 0
+  shootFlyEnemy: 0

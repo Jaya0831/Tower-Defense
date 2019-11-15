@@ -10,16 +10,28 @@ public class Weapon : MonoBehaviour
     public int timer;
     public int timerRuler;
     public float radius;
+    public int damage;
     private Vector3 view;
-    public static int price;
+    public int price;
     public bool isLocked;
     public bool shootFlyEnemy;
-   
+    public int grade;
+    public int[] radiusUpgrade;
+    public int[] cdTimeUpgrade;
+    public int[] damageUpgrade;
+    public int[] prices;
+    public int scaleHurt;
+    public int scaleHurtDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         isLocked = false;
+        price = prices[0];
+        timer = cdTimeUpgrade[0];
+        timerRuler = cdTimeUpgrade[0];
+        radius = radiusUpgrade[0];
+        damage = damageUpgrade[0];
     }
 
     // Update is called once per frame
@@ -37,7 +49,6 @@ public class Weapon : MonoBehaviour
                     target = GameManager.Instance.selectedTarget;
                 }
             }
-            
         }
         if (!isLocked)
         {
@@ -96,18 +107,34 @@ public class Weapon : MonoBehaviour
     public void Shoot(GameObject target)
     {
         GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
+        bullet.GetComponent<Bullet>().damageToEnemy = damage;
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Impulse);
         bullet.GetComponent<Bullet>().DamageAfterseconds();
         bullet.GetComponent<Bullet>().targetEnemy = target;
+        bullet.GetComponent<Bullet>().scaleHurt = scaleHurt;
+        bullet.GetComponent<Bullet>().scaleHurtDamage = scaleHurtDamage;
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 1, 0);
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    public static void PlaceWeapon(Vector3 vector3,GameObject gameObject)
+    public static GameObject PlaceWeapon(Vector3 vector3,GameObject gameObject)
     {
-        Instantiate(gameObject, vector3, Quaternion.identity);
+        return Instantiate(gameObject, vector3, Quaternion.identity);
+        
+    }
+    public void UpGrade()
+    {
+        if (GameManager.Instance.money >= prices[grade])
+        {
+            GameManager.Instance.money -= prices[grade];
+            grade++;
+            timer = cdTimeUpgrade[grade - 1];
+            timerRuler = cdTimeUpgrade[grade - 1];
+            radius = radiusUpgrade[grade - 1];
+            damage = damageUpgrade[grade - 1];
+        }
         
     }
 }

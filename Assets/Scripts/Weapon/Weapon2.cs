@@ -6,14 +6,17 @@ using UnityEngine;
     public class Weapon2 : Weapon
     {
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             speed = 120;
-            timer = 40;
-            timerRuler = 40;
-            radius = 1000;
-            price = 400;
+            prices = new int[] { 400, 150, 250 };
             shootFlyEnemy = true;
+            grade = 1;
+            damageUpgrade = new int[] { 2, 3, 4 };
+            cdTimeUpgrade = new int[] { 40, 35, 30 };
+            radiusUpgrade = new int[] { 35, 40, 45 };
+            scaleHurt = (int)radius-15;
+            scaleHurtDamage = damage / 2;
         }
 
 

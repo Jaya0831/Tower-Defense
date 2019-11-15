@@ -76,12 +76,10 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\UI\EnemySlider.cs" />
     <Compile Include="Assets\Scripts\UI\MyButton.cs" />
+    <Compile Include="Assets\Scripts\UI\UpGradeButton.cs" />
     <Compile Include="Assets\Scripts\UI\WeaponUI.cs" />
     <Compile Include="Assets\Scripts\VeiwController.cs" />
     <Compile Include="Assets\Scripts\Weapon\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Bullet1.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Bullet2.cs" />
-    <Compile Include="Assets\Scripts\Weapon\Bullet3.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon1.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon2.cs" />

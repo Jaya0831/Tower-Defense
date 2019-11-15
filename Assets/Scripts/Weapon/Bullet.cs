@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 {
     public int damageToEnemy;
     public GameObject targetEnemy;
+    public int scaleHurt;
+    public int scaleHurtDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +49,17 @@ public class Bullet : MonoBehaviour
             {
                 other.gameObject.GetComponent<Enemy2>().GetHurt(damageToEnemy);
             }
-
+            if (scaleHurt!=0)
+            {
+                Collider[] cols = Physics.OverlapSphere(transform.position, scaleHurt, 1 << LayerMask.NameToLayer("Enemy"));
+                if (cols.Length != 0)
+                {
+                    foreach(var item in cols)
+                    {
+                        item.GetComponent<Enemy>().GetHurt(scaleHurtDamage);
+                    }
+                }
+            }
         }
     }
 }

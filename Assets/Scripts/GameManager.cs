@@ -64,9 +64,12 @@ public class GameManager : MonoBehaviour
             //Debug.Log("23333");
             if (Physics.Raycast(ray, out raycastHit, 1000, 1 << LayerMask.NameToLayer("Enemy")))
             {
-                selectedTarget = raycastHit.collider.gameObject;
-                //Debug.Log(raycastHit.collider.gameObject);
+                
+                    selectedTarget = raycastHit.collider.gameObject;
+                    //Debug.Log(raycastHit.collider.gameObject);
+                
             }
+            //else if
         }
     }
     IEnumerator CreateEnemy(GameObject enemytype,int n,float intervalTime)
