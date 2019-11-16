@@ -32,6 +32,8 @@ public class Weapon : MonoBehaviour
         timerRuler = cdTimeUpgrade[0];
         radius = radiusUpgrade[0];
         damage = damageUpgrade[0];
+        GameManager.Instance.money -= price;
+
     }
 
     // Update is called once per frame
@@ -113,6 +115,7 @@ public class Weapon : MonoBehaviour
         bullet.GetComponent<Bullet>().targetEnemy = target;
         bullet.GetComponent<Bullet>().scaleHurt = scaleHurt;
         bullet.GetComponent<Bullet>().scaleHurtDamage = scaleHurtDamage;
+        //Debug.Log(price);
     }
     private void OnDrawGizmos()
     {

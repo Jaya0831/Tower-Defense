@@ -38,7 +38,10 @@ public class WeaponUI : MonoBehaviour
             RaycastHit raycastHit;
             ray=new Ray(minecamera.transform.position, minecamera.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, minecamera.farClipPlane)) - minecamera.transform.position);
             if (upGradeButton.GetComponent<MyButton>().isButtonEnter==false&&button1.GetComponent<MyButton>().isButtonEnter==false&& button2.GetComponent<MyButton>().isButtonEnter == false&& button3.GetComponent<MyButton>().isButtonEnter == false)
-            {
+            {//是这里button的进入判定出问题了吗
+
+                //这里就debug不出来
+                //Debug.Log("2222");
                 if (Physics.Raycast(ray, out raycastHit, 1000, 1 << LayerMask.NameToLayer("Map")))
                 {
                     //Debug.Log(Physics.Raycast(ray, out raycastHit, 1 << LayerMask.NameToLayer("Map")));
@@ -73,19 +76,30 @@ public class WeaponUI : MonoBehaviour
                 else 
                 {
                     weaponUI.SetActive(false);
+                    upGradeUI.SetActive(false);
                     if (Physics.Raycast(ray, out raycastHit, 1000, 1 << LayerMask.NameToLayer("Weapon")))
                     {
                         ownerOfUpGradeUI = raycastHit.collider.gameObject;
                         upGradeUI.transform.SetPositionAndRotation(minecamera.WorldToScreenPoint(raycastHit.transform.position) + new Vector3(0, 60, 0), Quaternion.identity);
                         upGradeUI.SetActive(true);
                         
-                            
                     }
                 }
             }
             
-            
         }
+        //在update里面
+        /*if (weaponUI.active == true)
+        {
+            //Debug.Log("2333");
+            if (!block.GetComponent<Block>().isEmpty)
+            {
+                weaponUI.SetActive(false);
+                //block = null;
+               
+            }
+        }*/
+
         if (upGradeUI.active == true)
         {
             if (ownerOfUpGradeUI.GetComponent<Weapon>().grade == 3)
@@ -110,12 +124,17 @@ public class WeaponUI : MonoBehaviour
     }
     private void CreateWeapon(int price,GameObject weaponPrefab)
     {
+        
         if (GameManager.Instance.money >= price)
         {
             //Debug.Log(weapon1Prefab.name);
             block.GetComponent<Block>().isEmpty = false;
             block.GetComponent<Block>().weaponObove = Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weaponPrefab);
-            GameManager.Instance.money -= block.GetComponent<Block>().weaponObove.GetComponent<Weapon>().price;
+            //Debug.Log(block.GetComponent<Block>().weaponObove);
+            weaponUI.SetActive(false);
+            button1.GetComponent<MyButton>().isButtonEnter = false;
+            button2.GetComponent<MyButton>().isButtonEnter = false;
+            button3.GetComponent<MyButton>().isButtonEnter = false;
         }
     }
 
@@ -123,19 +142,22 @@ public class WeaponUI : MonoBehaviour
     {
         //Debug.Log("CreateAfterClick1");
         CreateWeapon(price, weapon1Prefab);
-
+        //weaponUI.SetActive(false);
     }
     public void CreateAfterClick2(int price)
     {
         //Debug.Log("CreateAfterClick2");
         CreateWeapon(price, weapon2Prefab);
+        //weaponUI.SetActive(false);
+
     }
     public void CreateAfterClick3(int price)
     {
         //Debug.Log("CreateAfterClick3");
         CreateWeapon(price, weapon3Prefab);
+        //weaponUI.SetActive(false);
 
     }
-    
+
 
 }

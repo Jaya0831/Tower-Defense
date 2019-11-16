@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             GameManager.Instance.money += award;
             GameManager.Instance.damageCount++;
+            Debug.Log("444");
         }
 
     }

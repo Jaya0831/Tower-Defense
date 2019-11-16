@@ -56,7 +56,13 @@ public class Bullet : MonoBehaviour
                 {
                     foreach(var item in cols)
                     {
-                        item.GetComponent<Enemy>().GetHurt(scaleHurtDamage);
+                        if (item.gameObject != other.gameObject)
+                        {
+                            int i = 1;
+                            Debug.Log(i);
+                            item.GetComponent<Enemy>().GetHurt(scaleHurtDamage);
+                            i++;
+                        }
                     }
                 }
             }
