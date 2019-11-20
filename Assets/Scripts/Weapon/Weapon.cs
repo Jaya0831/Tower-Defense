@@ -73,6 +73,7 @@ public class Weapon : MonoBehaviour
 
     public void UpGrade()
     {
+        Debug.Log(prices[grade]);
         if (GameManager.Instance.money >= prices[grade])
         {
             GameManager.Instance.money -= prices[grade];

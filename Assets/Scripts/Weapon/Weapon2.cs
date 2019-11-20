@@ -17,6 +17,8 @@ using UnityEngine;
             radiusUpgrade = new int[] { 35, 40, 45 };
             scaleHurt = (int)radius-15;
             scaleHurtDamage = damage / 2;
+           
+
         }
 
 

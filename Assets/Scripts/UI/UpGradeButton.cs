@@ -14,7 +14,7 @@ public class UpGradeButton : MonoBehaviour
         upGradeButton.onClick.AddListener(
             delegate ()
             {
-                weaponToBeUpGrade.GetComponent<Weapon>().UpGrade();
+                weaponToBeUpGrade.GetComponent<WeaponController>().weaponType.UpGrade();
             }
             );
     }

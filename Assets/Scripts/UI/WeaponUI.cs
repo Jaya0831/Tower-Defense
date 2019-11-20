@@ -65,6 +65,7 @@ public class WeaponUI : MonoBehaviour
                     }
                     else
                     {
+                        //Debug.Log("233");
                         upGradeUI.transform.SetPositionAndRotation(minecamera.WorldToScreenPoint(raycastHit.transform.position) + new Vector3(0, 60, 0), Quaternion.identity);
                         upGradeUI.SetActive(true);
                         weaponUI.SetActive(false);
@@ -112,9 +113,9 @@ public class WeaponUI : MonoBehaviour
             {
                 upGradeButton.interactable = true;
                 upGradeButton.GetComponent<UpGradeButton>().weaponToBeUpGrade = ownerOfUpGradeUI;
-                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.damageUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().damageUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
-                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.radiusUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().radiusUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
-                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
+                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.damageUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.damageUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade];
+                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.radiusUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.radiusUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade];
+                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade];
 
             }
         }
