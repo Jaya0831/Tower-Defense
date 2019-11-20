@@ -1,27 +1,29 @@
 ﻿<Properties StartupConfiguration="{9B282EBB-F650-CE4C-3165-30EC9E911FE9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/WeaponUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Weapon/Weapon1.cs">
     <Files>
-      <File FileName="Assets/Scripts/Weapon/Weapon.cs" Line="44" Column="1" />
-      <File FileName="Assets/Scripts/Weapon/Weapon1.cs" Line="22" Column="2" />
-      <File FileName="Assets/Scripts/Weapon/Weapon2.cs" Line="18" Column="40" />
-      <File FileName="Assets/Scripts/Weapon/Weapon3.cs" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="91" Column="9" />
+      <File FileName="Assets/Scripts/Weapon/Weapon.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Weapon/Weapon2.cs" Line="9" Column="16" />
+      <File FileName="Assets/Scripts/Weapon/Weapon3.cs" Line="9" Column="12" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="38" Column="11" />
       <File FileName="Assets/Scripts/Enemy/Enemy.cs" Line="33" Column="26" />
       <File FileName="Assets/Scripts/Enemy/Enemy1.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemy/Enemy2.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/Boss.cs" />
+      <File FileName="Assets/Scripts/Enemy/Boss.cs" Line="1" Column="1" />
       <File FileName="../../../吃豆人/Assets/Scripts/GameManager.cs" />
-      <File FileName="Assets/Scripts/VeiwController.cs" />
-      <File FileName="Assets/Scripts/UI/WeaponUI.cs" Line="127" Column="9" />
+      <File FileName="Assets/Scripts/VeiwController.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/UI/WeaponUI.cs" Line="142" Column="1" />
       <File FileName="Assets/Scripts/UI/MyButton.cs" Line="23" Column="19" />
-      <File FileName="Assets/Scripts/Weapon/Bullet.cs" Line="59" Column="27" />
-      <File FileName="Assets/Scripts/End.cs" />
-      <File FileName="Assets/Scripts/Block.cs" />
-      <File FileName="Assets/Scripts/Enemy/Move/FormalMove.cs" />
-      <File FileName="Assets/Scripts/Enemy/Move/BossMove.cs" />
+      <File FileName="Assets/Scripts/Weapon/Bullet.cs" Line="22" Column="5" />
+      <File FileName="Assets/Scripts/End.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Block.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/Move/FormalMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/Move/BossMove.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/EnemySlider.cs" Line="21" Column="15" />
       <File FileName="Assets/Scripts/Enemy/Move/Fly.cs" />
       <File FileName="Assets/Scripts/UI/UpGradeBUtton.cs" Line="15" Column="24" />
+      <File FileName="Assets/Scripts/Enemy/Move/Move.cs" Line="26" Column="21" />
+      <File FileName="Assets/Scripts/Weapon/WeapomController.cs" Line="15" Column="20" />
+      <File FileName="Assets/Scripts/Weapon/Weapon1.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,10 +34,10 @@
                 <Node name="Enemy" expanded="True">
                   <Node name="Move" expanded="True" />
                 </Node>
-                <Node name="UI" expanded="True">
-                  <Node name="WeaponUI.cs" selected="True" />
+                <Node name="UI" expanded="True" />
+                <Node name="Weapon" expanded="True">
+                  <Node name="Weapon1.cs" selected="True" />
                 </Node>
-                <Node name="Weapon" expanded="True" />
               </Node>
             </Node>
           </Node>

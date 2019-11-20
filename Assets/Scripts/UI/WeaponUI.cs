@@ -7,9 +7,7 @@ public class WeaponUI : MonoBehaviour
 {
     public GameObject weaponUI;
     public Camera minecamera;
-    public GameObject weapon1Prefab;
-    public GameObject weapon2Prefab;
-    public GameObject weapon3Prefab;
+    public GameObject weaponPrefab;
     private GameObject block;
     private Vector3 blockPosition;
     public GameObject button1;
@@ -21,6 +19,7 @@ public class WeaponUI : MonoBehaviour
     public Text cdText;
     public Button upGradeButton;
     public GameObject ownerOfUpGradeUI;
+    public int[] price;
     // Start is called before the first frame update
     void Start()
     {
@@ -102,34 +101,34 @@ public class WeaponUI : MonoBehaviour
 
         if (upGradeUI.active == true)
         {
-            if (ownerOfUpGradeUI.GetComponent<Weapon>().grade == 3)
+            if (ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade == 3)
             {
                 upGradeButton.interactable = false;
-                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<Weapon>().damageUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1];
-                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<Weapon>().radiusUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1];
-                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<Weapon>().cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1];
+                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.damageUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1];
+                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.radiusUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1];
+                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1];
             }
             else
             {
                 upGradeButton.interactable = true;
                 upGradeButton.GetComponent<UpGradeButton>().weaponToBeUpGrade = ownerOfUpGradeUI;
-                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<Weapon>().damageUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().damageUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
-                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<Weapon>().radiusUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().radiusUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
-                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<Weapon>().cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
+                hurtText.text = "Hurt:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.damageUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().damageUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
+                radiusText.text = "Radius:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.radiusUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().radiusUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
+                cdText.text = "CDTime:" + ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<WeaponController>().weaponType.grade - 1] + " to " + ownerOfUpGradeUI.GetComponent<Weapon>().cdTimeUpgrade[ownerOfUpGradeUI.GetComponent<Weapon>().grade];
 
             }
         }
 
 
     }
-    private void CreateWeapon(int price,GameObject weaponPrefab)
+    private void CreateWeapon(int price_,int index)
     {
         
-        if (GameManager.Instance.money >= price)
+        if (GameManager.Instance.money >= price_)
         {
             //Debug.Log(weapon1Prefab.name);
             block.GetComponent<Block>().isEmpty = false;
-            block.GetComponent<Block>().weaponObove = Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weaponPrefab);
+            block.GetComponent<Block>().weaponObove = Weapon.PlaceWeapon(blockPosition + new Vector3(0, 1.5f, 0), weaponPrefab, index);
             //Debug.Log(block.GetComponent<Block>().weaponObove);
             weaponUI.SetActive(false);
             button1.GetComponent<MyButton>().isButtonEnter = false;
@@ -138,26 +137,13 @@ public class WeaponUI : MonoBehaviour
         }
     }
 
-    public void CreateAfterClick1(int price)
+    public void CreateAfterClick(int buttonIndex)
     {
-        //Debug.Log("CreateAfterClick1");
-        CreateWeapon(price, weapon1Prefab);
+        CreateWeapon(price[buttonIndex], buttonIndex);
         //weaponUI.SetActive(false);
     }
-    public void CreateAfterClick2(int price)
-    {
-        //Debug.Log("CreateAfterClick2");
-        CreateWeapon(price, weapon2Prefab);
-        //weaponUI.SetActive(false);
-
-    }
-    public void CreateAfterClick3(int price)
-    {
-        //Debug.Log("CreateAfterClick3");
-        CreateWeapon(price, weapon3Prefab);
-        //weaponUI.SetActive(false);
-
-    }
+    
+    
 
 
 }

@@ -23,6 +23,18 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnemyMove();
+    }
+    public void LoadPath(GameObject go)
+    {
+        foreach(Transform t in go.transform)
+        {
+            WayPoints.Add(t.position+upPosition);
+            //Debug.Log(upPosition);
+        }
+    }
+    private void EnemyMove()
+    {
         if (Vector3.Distance(transform.position, WayPoints[index]) > 1.3)
         //if(transform.position!=WayPoints[index])
         {
@@ -39,14 +51,6 @@ public class Move : MonoBehaviour
                 index = 0;
             }
 
-        }
-    }
-    public void LoadPath(GameObject go)
-    {
-        foreach(Transform t in go.transform)
-        {
-            WayPoints.Add(t.position+upPosition);
-            //Debug.Log(upPosition);
         }
     }
 }

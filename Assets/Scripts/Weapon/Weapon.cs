@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public GameObject bulletPrefabs;
+    public Material materialOfWeapon;
     public float speed;
     private GameObject target;
     public int timer;
@@ -24,7 +25,8 @@ public class Weapon : MonoBehaviour
     public int scaleHurtDamage;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void WeaponAwake() { }
+    public void WeaponStart()
     {
         isLocked = false;
         price = prices[0];
@@ -37,13 +39,59 @@ public class Weapon : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void WeaponUpdate()
+    {
+        WeaponWorking();
+    }
+
+    public void Shoot(GameObject target)
+    {
+        GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
+        bullet.GetComponent<Bullet>().damageToEnemy = damage;
+        bullet.GetComponent<Rigidbody>()
+            .AddForce(transform.forward * speed, ForceMode.Impulse);
+        bullet.GetComponent<Bullet>().DamageAfterseconds();
+        bullet.GetComponent<Bullet>().targetEnemy = target;
+        bullet.GetComponent<Bullet>().scaleHurt = scaleHurt;
+        bullet.GetComponent<Bullet>().scaleHurtDamage = scaleHurtDamage;
+        //Debug.Log(price);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0, 1, 0);
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public static GameObject PlaceWeapon(Vector3 vector3,GameObject gameObject,int index)
+    {
+        GameObject newObject = Instantiate(gameObject, vector3, Quaternion.identity);
+        newObject.GetComponent<WeaponController>().WeaponInit(index);
+        return newObject;
+        
+    }
+
+    public void UpGrade()
+    {
+        if (GameManager.Instance.money >= prices[grade])
+        {
+            GameManager.Instance.money -= prices[grade];
+            grade++;
+            timer = cdTimeUpgrade[grade - 1];
+            timerRuler = cdTimeUpgrade[grade - 1];
+            radius = radiusUpgrade[grade - 1];
+            damage = damageUpgrade[grade - 1];
+        }
+        
+    }
+
+    private void WeaponWorking()
     {
         timer++;
-        
+
         if (GameManager.Instance.selectedTarget)
         {
-            if(GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility&&shootFlyEnemy==true|| GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility==false)
+            if (GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility && shootFlyEnemy == true || GameManager.Instance.selectedTarget.GetComponent<Enemy>().flyAbility == false)
             {
                 if (Vector3.Distance(transform.position, GameManager.Instance.selectedTarget.transform.position) <= radius)
                 {
@@ -57,7 +105,7 @@ public class Weapon : MonoBehaviour
             Collider[] cols = Physics.OverlapSphere(transform.position, radius, 1 << LayerMask.NameToLayer("Enemy"));
             if (shootFlyEnemy == false)
             {
-                for(int i=0;i<cols.Length;i++)
+                for (int i = 0; i < cols.Length; i++)
                 {
                     if (cols[i].gameObject.GetComponent<Enemy>().flyAbility)
                     {
@@ -65,22 +113,22 @@ public class Weapon : MonoBehaviour
                     }
                 }
             }
-            List<Collider> availableCols=new List<Collider>();
-            foreach(var item in cols)
+            List<Collider> availableCols = new List<Collider>();
+            foreach (var item in cols)
             {
                 if (item)
                 {
                     availableCols.Add(item);
                 }
             }
-            if (availableCols.Count!=0 )
+            if (availableCols.Count != 0)
             {
                 //Debug.Log("shoot");
                 target = availableCols[0].gameObject;
                 foreach (var item in availableCols)
                 {
                     //Debug.Log(item.GetComponent<Enemy>().distance);
-                    if (target.GetComponent<Enemy>().distance<item.GetComponent<Enemy>().distance)
+                    if (target.GetComponent<Enemy>().distance < item.GetComponent<Enemy>().distance)
                     {
                         target = item.gameObject;
                         //Debug.Log(target);
@@ -88,7 +136,7 @@ public class Weapon : MonoBehaviour
                 }
             }
         }
-        
+
         if (!target || Vector3.Distance(target.transform.position, transform.position) > radius)
         {
             isLocked = false;
@@ -104,40 +152,5 @@ public class Weapon : MonoBehaviour
                 timer = 0;
             }
         }
-        
-    }
-    public void Shoot(GameObject target)
-    {
-        GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
-        bullet.GetComponent<Bullet>().damageToEnemy = damage;
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Impulse);
-        bullet.GetComponent<Bullet>().DamageAfterseconds();
-        bullet.GetComponent<Bullet>().targetEnemy = target;
-        bullet.GetComponent<Bullet>().scaleHurt = scaleHurt;
-        bullet.GetComponent<Bullet>().scaleHurtDamage = scaleHurtDamage;
-        //Debug.Log(price);
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, 1, 0);
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
-    public static GameObject PlaceWeapon(Vector3 vector3,GameObject gameObject)
-    {
-        return Instantiate(gameObject, vector3, Quaternion.identity);
-        
-    }
-    public void UpGrade()
-    {
-        if (GameManager.Instance.money >= prices[grade])
-        {
-            GameManager.Instance.money -= prices[grade];
-            grade++;
-            timer = cdTimeUpgrade[grade - 1];
-            timerRuler = cdTimeUpgrade[grade - 1];
-            radius = radiusUpgrade[grade - 1];
-            damage = damageUpgrade[grade - 1];
-        }
-        
     }
 }

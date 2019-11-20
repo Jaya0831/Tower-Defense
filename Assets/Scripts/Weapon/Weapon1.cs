@@ -5,9 +5,10 @@ using UnityEngine;
 public class Weapon1 : Weapon
 {
     // Start is called before the first frame update
-    void Awake()
+    public override void WeaponAwake()
     {
         speed = 100;
+        Debug.Log("get");
         prices = new int[] { 300, 100, 200 };
         shootFlyEnemy = false;
         grade = 1;

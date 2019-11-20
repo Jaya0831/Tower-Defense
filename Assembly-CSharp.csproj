@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Weapon\Weapon1.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon2.cs" />
     <Compile Include="Assets\Scripts\Weapon\Weapon3.cs" />
+    <Compile Include="Assets\Scripts\Weapon\WeaponController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/liujiayi/Documents/GitHub/Tower-Defense/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

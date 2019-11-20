@@ -18,14 +18,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (targetEnemy != null)
-        {
-            float velocityMagnitude = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
-            gameObject.GetComponent<Rigidbody>().velocity = (targetEnemy.transform.position - transform.position).normalized * velocityMagnitude;
-            //Debug.Log(targetEnemy.transform.position);
-
-        }
-
+        BulletTrack();
     }
     public void DamageAfterseconds()
     {
@@ -66,6 +59,16 @@ public class Bullet : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+    private void BulletTrack()
+    {
+        if (targetEnemy != null)
+        {
+            float velocityMagnitude = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+            gameObject.GetComponent<Rigidbody>().velocity = (targetEnemy.transform.position - transform.position).normalized * velocityMagnitude;
+            //Debug.Log(targetEnemy.transform.position);
+
         }
     }
 }

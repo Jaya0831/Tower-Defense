@@ -13,8 +13,11 @@ GameObject:
   - component: {fileID: 1621114917113437270}
   - component: {fileID: 6958989868182560434}
   - component: {fileID: 6690325937799444639}
+  - component: {fileID: 3195839098293394314}
+  - component: {fileID: 7837472298334303191}
+  - component: {fileID: 3756410825578244091}
   m_Layer: 10
-  m_Name: Weapon1
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,10 +111,96 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefabs: {fileID: 8690223399650397719, guid: e34d1a55dfa28451b88817cc4517ded1,
     type: 3}
+  materialOfWeapon: {fileID: 2100000, guid: a4826df70bc324da68f8d86d2073db18, type: 2}
   speed: 100
   timer: 30
   timerRuler: 30
   radius: 30
+  damage: 0
   price: 0
   isLocked: 0
   shootFlyEnemy: 0
+  grade: 0
+  radiusUpgrade: 
+  cdTimeUpgrade: 
+  damageUpgrade: 
+  prices: 
+  scaleHurt: 0
+  scaleHurtDamage: 0
+--- !u!114 &3195839098293394314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371229892370760636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9525cad6e8b454b718176e0b467d38e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabs: {fileID: 6560319511682470423, guid: da351c8b2f5d346848d37ee8c604a322,
+    type: 3}
+  materialOfWeapon: {fileID: 2100000, guid: 0fb095ea77ca4734aa0dbb32784e33c0, type: 2}
+  speed: 0
+  timer: 0
+  timerRuler: 0
+  radius: 0
+  damage: 0
+  price: 0
+  isLocked: 0
+  shootFlyEnemy: 0
+  grade: 0
+  radiusUpgrade: 
+  cdTimeUpgrade: 
+  damageUpgrade: 
+  prices: 
+  scaleHurt: 0
+  scaleHurtDamage: 0
+--- !u!114 &7837472298334303191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371229892370760636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95dfd74c0a99452fb3192311469152d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabs: {fileID: 5659404617715226634, guid: 3fd9e6f34031e411f8092bf524584bb3,
+    type: 3}
+  materialOfWeapon: {fileID: 2100000, guid: bb028cdfc00ff1b40a10f3c9c93f735b, type: 2}
+  speed: 0
+  timer: 0
+  timerRuler: 0
+  radius: 0
+  damage: 0
+  price: 0
+  isLocked: 0
+  shootFlyEnemy: 0
+  grade: 0
+  radiusUpgrade: 
+  cdTimeUpgrade: 
+  damageUpgrade: 
+  prices: 
+  scaleHurt: 0
+  scaleHurtDamage: 0
+--- !u!114 &3756410825578244091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371229892370760636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a08f33c9c55542c8ba34dc46ba49ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTypes:
+  - {fileID: 6690325937799444639}
+  - {fileID: 3195839098293394314}
+  - {fileID: 7837472298334303191}
+  weaponType: {fileID: 0}

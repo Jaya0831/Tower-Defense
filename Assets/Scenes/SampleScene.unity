@@ -10326,11 +10326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponUI: {fileID: 603723123}
   minecamera: {fileID: 963194227}
-  weapon1Prefab: {fileID: 3371229892370760636, guid: f6b7d5f81c3a146f59f0d7f1f3b2d2fa,
-    type: 3}
-  weapon2Prefab: {fileID: 7002069647283947275, guid: 81a4e596057e8448e9d6a5c4c222b82a,
-    type: 3}
-  weapon3Prefab: {fileID: 8309996959158823388, guid: 7bb49931aa1714beb96a76479a7a354c,
+  weaponPrefab: {fileID: 3371229892370760636, guid: f6b7d5f81c3a146f59f0d7f1f3b2d2fa,
     type: 3}
   button1: {fileID: 1438199782}
   button2: {fileID: 1488045594}
@@ -10341,6 +10337,7 @@ MonoBehaviour:
   cdText: {fileID: 438988273}
   upGradeButton: {fileID: 1344922964}
   ownerOfUpGradeUI: {fileID: 0}
+  price: 2c01000090010000f4010000
 --- !u!4 &762100299
 Transform:
   m_ObjectHideFlags: 0
@@ -12725,12 +12722,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762100298}
-        m_MethodName: CreateAfterClick3
+        m_MethodName: CreateAfterClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20281,12 +20278,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762100298}
-        m_MethodName: CreateAfterClick1
+        m_MethodName: CreateAfterClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 300
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20676,12 +20673,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 762100298}
-        m_MethodName: CreateAfterClick2
+        m_MethodName: CreateAfterClick
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 400
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

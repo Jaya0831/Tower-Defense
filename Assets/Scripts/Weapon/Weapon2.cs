@@ -6,7 +6,7 @@ using UnityEngine;
     public class Weapon2 : Weapon
     {
         // Start is called before the first frame update
-        void Awake()
+        public override void WeaponAwake()
         {
             speed = 120;
             prices = new int[] { 400, 150, 250 };
